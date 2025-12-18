@@ -15,21 +15,18 @@ In Aerospace,Wind and automotive composite workflows, engineers must prepare CAD
 
 **The Manual Process:**
 1.  Engineers manually identify curve boundaries on complex surfaces in 3D Model.
-2.  They use point-and-click operations to extract curves one by one.
+2.  They use point-and-click operations to extract curves one by one and save this individually.
 3.  **Result:** This takes **15–20 minutes per part** and is prone to human selection errors.
 
 **The Solution:**
-I developed a Python script utilizing the **NXOpen API** to programmatically traverse the geometry. By inputting a single Feature Group, the algorithm detects, filters, and extracts the necessary composite curves automatically from the selected group.
+I developed a Python script utilizing the **NXOpen API** to programmatically export the geometry. By inputting a single Feature Group, the algorithm detects, filters, and extracts the necessary composite curves automatically from the selected group.
 
-### Key Benefits
-* ✅ **Efficiency:** Reduces extraction time from minutes to seconds.
-* ✅ **Repeatability:** Removes human variability; the output is standard every time.
-* ✅ **Scalability:** Capable of processing complex assemblies that would be tedious to handle manually.
+**Key Benefits:**
+**Efficiency:** Reduces extraction time from minutes to seconds.
+**Repeatability:** Removes human variability; the output is standard every time.
+**Scalability:** Capable of processing complex assemblies that would be tedious to handle manually.
 
----
-
-## 🏗️ Architecture & Logic
-
+**Architecture & Logic:**
 The script follows a modular extraction pipeline:
 
 ```mermaid
@@ -37,6 +34,6 @@ graph LR
     A[Start: User Selects Feature Group] --> B{Validation};
     B -- Invalid --> C[Error: Invalid Selection];
     B -- Valid --> D[Traverse Geometry];
-    D --> E[Filter Curves (Edge/Spline Logic)];
+    D --> E[Filter Curves (Composite Curve Logic)];
     E --> F[Extract to New Layer];
     F --> G[End: Report Generated];
