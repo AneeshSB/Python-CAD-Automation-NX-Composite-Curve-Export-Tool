@@ -30,7 +30,6 @@ I developed a Python script utilizing the **NXOpen API** to programmatically exp
 The script follows a modular extraction pipeline:
 
 ```mermaid
-graph LR
     graph TD
     Start([User Clicks 'Custom Python Tool']) --> GUI[GUI Opens];
     
