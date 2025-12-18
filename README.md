@@ -35,5 +35,5 @@ graph LR
     B -- Invalid --> C[Error: Invalid Selection];
     B -- Valid --> D[Traverse Geometry];
     D --> E["Filter Curves (Composite Curve Logic)"];
-    E --> F[Extract to New Layer];
+    E --> F[Extract to Selected Folder in order from the Feature group];
     F --> G[End: Report Generated];
