@@ -34,7 +34,7 @@ The script follows a modular extraction pipeline:
     Start([User Clicks 'Custom Python Tool']) --> GUI[GUI Opens];
     
     subgraph User_Inputs [User Configuration]
-        GUI --> SelectModel[/Select 3D Model/];
+        GUI --> SelectModel[/Select 3D Model as Input/];
         SelectModel --> SelectFolder[/Select Output Folder/];
         SelectFolder --> TypeName[/Enter Feature Group Name/];
         TypeName --> Run[Click 'Start Batch IGES Export'];
