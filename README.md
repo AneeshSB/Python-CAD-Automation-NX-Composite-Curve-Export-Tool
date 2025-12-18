@@ -31,7 +31,7 @@ The script follows a modular extraction pipeline:
 
 ```mermaid
 graph LR
-graph TD
+    graph TD
     Start([User Clicks 'Custom Python Tool']) --> GUI[GUI Opens];
     
     subgraph User_Inputs [User Configuration]
