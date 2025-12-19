@@ -131,7 +131,7 @@ Upon request, I can add you as a Collaborator to the repository or provide a sec
 ## About the Author
 
 **Aneesh Shridhar B**
-*Masters Student in Intelligent Manufacturing @ TU Clausthal, Germany| Composite Design & Manufacturing Engineer*
+*Masters Student in Intelligent Manufacturing @ TU Clausthal, Germany | Composite Design & Manufacturing Engineer*
 
 With over **6 years of industrial experience** at global leaders like **General Electric, Tata Advanced Systems, and Enercon GmbH**, I specialize in bridging the gap between physical composite manufacturing and digital automation.
 
