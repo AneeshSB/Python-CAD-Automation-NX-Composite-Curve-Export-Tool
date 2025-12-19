@@ -31,27 +31,29 @@ I developed a Python script utilizing the **NXOpen API** to programmatically exp
 **Scalability:** Capable of processing complex assemblies that would be tedious to handle manually.
 
 ## Architecture & Logic
+
 The script follows a modular extraction pipeline:
 
 ```mermaid
-    graph TD
-    Start([User Clicks 'Custom Python Tool']) --> GUI[GUI Opens];
+graph LR
+    Start([User Starts Tool]) --> GUI[GUI Opens];
     
-    subgraph User_Inputs [User Configuration]
-        GUI --> SelectModel[/Select 3D Model as Input/];
-        SelectModel --> SelectFolder[/Select Output Folder/];
-        SelectFolder --> TypeName[/Enter Feature Group Name/];
-        TypeName --> Run[Click 'Start Batch IGES Export'];
+    subgraph User_Inputs [Configuration]
+        direction TB
+        GUI --> SelectModel[/Select Model/];
+        SelectModel --> SelectFolder[/Select Output/];
+        SelectFolder --> TypeName[/Enter Group Name/];
+        TypeName --> Run[Click 'Export'];
     end
     
-    Run --> Open[System Opens 3D Model];
-    Open --> Search{Feature Group Found?};
+    Run --> Open[Open Model];
+    Open --> Search{Group Found?};
     
-    Search -- No --> Error[Log Error & Stop];
-    Search -- Yes --> Iterate[Iterate Curves in Sequence];
+    Search -- No --> Error[Log Error];
+    Search -- Yes --> Iterate[Iterate Curves];
     
-    Iterate --> Export[Export IGES to Output Folder];
-    Export --> Finish([Process Complete]);
+    Iterate --> Export[Export IGES];
+    Export --> Finish([Done]);
 ```
 ## Technical Implementation Details
 
